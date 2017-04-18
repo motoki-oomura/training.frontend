@@ -1,0 +1,163 @@
+chapter5
+別のサイトへリンクする
+<a href="http://www.sbcr.jp">SBクリエイティブ社のwebサイトへ</a>
+
+リンクを別タブで開く
+<a href="http://www.sbcr.jp"target="_blank">SBクリエイティブ社のwebサイトへ</a>
+
+<a>タグの書式
+<a href="リンク先URLまたはパス">リンクを設定したいコンテツ</a>
+
+<a href="リンク先URLまたはパス"target=_blank">
+リンクを設定したいコンテツ</a>
+
+絶対パスとは[http://]や[https://]から始まるURLのこと
+絶対パスは、主に別のサイトへのリンクに使われる。また、wordpressなどのCMSを使ったwebサイトでは、サイト内の別のページや画像にリンクするときにも使われる。
+
+サイト内の別のページにリンクすることをサイト内リンク、内部リンクという。そのリンク先を相対パスと呼ばれる方式で指定できる。
+
+相対パスの書き方
+下の階層のファイルにリンクする
+<body>
+<h1>ホーム(index.html)</h1>
+<p><a href="about/index.html">会社案内</a></p>
+<p><a href="about/acess.html">アクセスマップ</a></p>
+<p><a href="service/index.html">サービス内容</a></p>
+</body>
+</html>
+相対パスとは、リンク元のファイルを起点として、リンク先のファイルの場所を指定する方法です。
+
+上の階層に上がってファイルをリンクするとき相対パスは１階層上がるごとに../を書く。もしに階層上がるときは../../と書く
+<p><a href="../index.html">ホーム</a></p>
+<p><a href="../about/index.html">会社案内</a></p>
+<p><a href="../about/acess.html">アクセスマップ</a></p>
+
+同階層のファイルにリンクする。同階層にあるファイルへリンクするときの相対パスは、リンク先のファイル名だけを書きます。
+<p><a href="../index.html">ホーム</a></p>
+<p><a href="index.html">会社案内</a></p>
+
+ルート相対パスとは、そのサイトのルートディレクトリを起点とするパスの指定方法です。リンク場所が変わっても、リンク先のURLが変わらない特徴がある。ルート相対パスは、パスの先頭が必ず『 /　』で始まる。
+
+ページ内の特定の場所へリンクする
+ページの特定の部分に移動できるリンクをページ内リンクという
+<ul>
+<li><a herf="#headline1037">5種類の一般フォントファミリーキーワード</a></li>
+</ul>
+
+<h2 id="headline1037">５種類の一般フォントファミリーキーワード</h2>
+これがページ内リンクを指定する　＃つけてidで指定する
+p９０重要　idのつけ方が書いてある
+
+リンク状態によってテキスト色が変わる
+a  aは全ての<a>タグにスタイルが適用される
+
+:link　
+<a>タグで、かつhref属性がついている要素にスタイルが適用される
+
+:visited
+<a>タグで、かつリンク先が訪問済みの時にスタイルが適用される
+
+:hover
+その要素にマウスポインタが重なっている（ホバー状態）時にスタイルが適用される
+
+:active
+その要素の上でマウスボタンがクリックされている（アクティブ状態）時にスタイルが適用される
+
+これらの擬似クラスは以下の順番で書かないと思った通りにスタイルが適用されない
+:link{.....}
+:visited{....}
+:hover{....}
+:active{....}
+
+下線を消す
+<style>
+a {
+	color: #0073bc;
+	text-decoration: none;
+}
+a:hover {
+	color: #b7dbf2;
+	text-decoration: underline;
+}
+</style>
+
+text-decoration:none;  線を消す
+text-decoration:underline;  下線を引く
+text-decoration:overline;   上線を引く
+text-decoration:line-through;　字消し線を引く
+
+p９７重要　属性と擬似要素について
+
+a[target="_blank"]::before {
+	content: url(../../images/opentab.png);
+}
+
+a[target="_blank"]::after {
+	content: url(../../images/opentab.png);
+}
+beforeはコンテツの前に画像を挿入する場合
+afterはコンテツの後ろに画像を挿入する場合
+
+書式
+セレクタ::after{
+	content: url(画像のURL);
+}
+
+コンテツの前にテキストを挿入する場合
+セレクタ::before{
+	content:"aaaaa";
+}
+
+画像を表示させる<img>タグの使い方
+<img>タグの書式
+<img src="表示させたい画像のファイルパス" width="画像の表示サイズ" height="画像の表示サイズ" alt="画像が表示されない時のテキスト"
+
+画像にリンクをつけるには<img>を<a>タグで囲むだけ
+<a href="http://studio947.net">
+	<img src="../../images/image0320.jpg" width="396" height="292" alt="積み木">
+</a>
+
+回り込みを実現させるfloatプロパティ
+float:left; このスタイルが適用された要素は左に配置され、テキストはその周りに回り込む
+
+float:right; このスタイルが適用された要素は右に配置され、テキストはその周りに回り込む
+
+float:none;　テキストは回り込まない。一見あまり意味がないような設定のように思えるが、レスポンシブwebデザインで使うことがある
+
+回り込みを解除するoverflow:hidden:
+設定した回り込みは必ずどこかで解除します。後続の要素が回り込み続けてしまうから。
+書き方
+}
+.float-box {
+	float: left;
+	margin-right: 1em;
+	margin-bottom: 0.5em;
+	vertical-align: baseline;
+}
+.float-clear {
+	overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
