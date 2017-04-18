@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>偶数行・奇数行で背景色を変える</title>
+<style>
+    .price tr:nth-child(odd) {
+        background: #e3ecf5;
+    }
+    
+    table {
+        border-collapse: collapse;
+    }
+    
+    td,
+    th {
+        padding: 5px;
+        border-left: 1px solid #e3ecf5;
+    }
+    
+    th {
+        color: #ffffff;
+        background-color: #446ca2;
+        font-weight: normal;
+    }
+    
+    caption {
+        color: #7e93c4;
+    }
+</style>
+</head>
+<body>
+<table class="price">
+    <caption>基本料金(1時間)</caption>
+    <tr>
+        <th>ルーム名</th>
+        <th>平日</th>
+        <th>土日祝</th>
+        <th>個人練習</th>
+    </tr>
+    <tr>
+        <td>8帖</td>
+        <td>&yen;1,080</td>
+        <td>&yen;2,160</td>
+        <td>&yen;540</td>
+    </tr>
+    <tr>
+        <td>12帖East</td>
+        <td>&yen;1,620</td>
+        <td>&yen;3,240</td>
+        <td>&yen;810</td>
+    </tr>
+    <tr>
+        <td>12帖West</td>
+        <td>&yen;1,620</td>
+        <td>&yen;3,240</td>
+        <td>&yen;810</td>
+    </tr>
+    <tr>
+        <td>16帖</td>
+        <td>&yen;2,160</td>
+        <td>&yen;4,320</td>
+        <td>&yen;1,080</td>
+    </tr>
+    <tr>
+        <td>20帖</td>
+        <td>&yen;2,700</td>
+        <td>&yen;5,832</td>
+        <td>&yen;1,350</td>
+    </tr>
+    <tr>
+        <td>30帖</td>
+        <td>&yen;4,050</td>
+        <td>&yen;8,100</td>
+        <td>&yen;2,025</td>
+    </tr>
+</table>
+</body>
+</html>
