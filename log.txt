@@ -1,0 +1,34 @@
+Date:   Thu Apr 27 19:05:58 2017 +0900
+
+    fix footer
+
+commit aaae9bdc91d3131de44d2a90b21a1eac87df08ae
+Author: Shoma Nishimura <s.nishiumura@leihauoli.com>
+--
+Date:   Thu Apr 27 17:33:04 2017 +0900
+
+    fix article parts
+
+commit 39e40d78eae08c0c289939112bf94f2beae29eb1
+Author: Shoma Nishimura <s.nishiumura@leihauoli.com>
+--
+Date:   Thu Apr 27 17:18:06 2017 +0900
+
+    fix news
+
+commit 8c2c8c00154c696f7e276351c81fae0b5a8691ec
+Author: Shoma Nishimura <s.nishiumura@leihauoli.com>
+--
+Date:   Thu Apr 27 14:27:59 2017 +0900
+
+    fix basic layout
+
+commit 9c94b80dadf093402552a3a2bad71dc33486db45
+Author: Shoma Nishimura <s.nishiumura@leihauoli.com>
+--
+Date:   Thu Apr 27 13:39:13 2017 +0900
+
+    fix basic markup
+
+commit e6d74211b168bf574d5178023258a2f861a49a93
+Author: Shoma Nishimura <s.nishiumura@leihauoli.com>
